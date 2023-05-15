@@ -7,8 +7,9 @@
  * Credit Taha & Omayma
  */
 
-int main(void)
+int main(int argc __attribute__((unused)), char** argv)
 {
+	hd = argv;
 	irun_shell();
 	return (0);
 }

@@ -37,7 +37,7 @@ execute_builtinthom(args);
 }
 else
 {
-exct_cmmvnd(args);
+exct_commvnd(args);
 }
 thomfree_args(args);
 }

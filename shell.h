@@ -7,6 +7,8 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+
+char** hd;
 void irun_shell(void);
 void exct_cmmvnd(char **args);
 void com_execve(char **args);
