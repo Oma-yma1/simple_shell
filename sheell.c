@@ -82,7 +82,6 @@ perror("cd");
 }
 else if (strcmp(args[0], "env") == 0)
 {
-extern char **environ;
 char **env;
 for (env = environ; *env != NULL; env++)
 {
