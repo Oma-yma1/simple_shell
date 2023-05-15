@@ -26,14 +26,14 @@ void com_execve(char **args)
 		while (d != NULL)
 		{
 			cmdpvth = malloc(strlen(d) + strlen(commvnd) + 2);
-			sprintf(cmdvth, "%s/%s", d, commvnd);
+			sprintf(cmdpvth, "%s/%s", d, commvnd);
 
 			if (access(cmdpvth, X_OK) == 0)
 			{
 				execve(cmdpvth, args, NULL);
 			}
 
-			free(cmdpbth);
+			free(cmdpvth);
 			d = strtok(NULL, ":");
 		}
 	}
