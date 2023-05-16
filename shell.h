@@ -11,7 +11,7 @@
 char** hd;
 extern char **environ;
 void irun_shell(void);
-void exct_cmmvnd(char **args);
+void exct_commvnd(char **args);
 void com_execve(char **args);
 char **thom_args(char *linee);
 int thom_builtin(char **args);
