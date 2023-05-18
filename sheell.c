@@ -13,16 +13,14 @@ void exct_commvnd(char **args);
 void irun_shell(void)
 {
 char *linee = NULL;
-size_t lenn = 0;
-ssize_t iread;
 char **args;
 while (1)
 {
 thom_prompt();
-iread = getline(&linee, &lenn, stdin);
-if (iread == -1)
+fflush(stdout);
+linee = get_line();
+if (!linee)
 {
-free(linee);
 exit(0);
 }
 args = thom_args(linee);
