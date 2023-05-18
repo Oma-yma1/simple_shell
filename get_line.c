@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  * get_line - function getline
- * Credit Taha & Omayma
+ * Credit: Taha & Omayma
  * Return: return line
  */
 #define BUF_SIZE 1024
