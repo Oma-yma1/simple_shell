@@ -21,4 +21,5 @@ void thom_prompt(void);
 void pnt_iid(void);
 void pnt_iiid(void);
 void prt_fle_stt(char *file_name);
+char *_getenv(const char *name);
 #endif

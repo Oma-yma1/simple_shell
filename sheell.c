@@ -74,7 +74,7 @@ exit(0);
 }
 else if (strcmp(args[0], "cd") == 0)
 {
-const char *di = args[1] ? args[1] : getenv("HOME");
+const char *di = args[1] ? args[1] : _getenv("HOME");
 if (chdir(di) != 0)
 {
 perror("cd");

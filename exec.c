@@ -20,7 +20,7 @@ void com_execve(char **args)
 			execve(commvnd, args, NULL);
 		}
 
-		pth = getenv("PATH");
+		pth = _getenv("PATH");
 		d = strtok(pth, ":");
 
 		while (d != NULL)
