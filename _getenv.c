@@ -16,7 +16,7 @@ char *_getenv(const char *name)
 	{
 		if (strncmp(name, *var, nvmelen) == 0 && (*var)[nvmelen] == '=')
 		{
-			return &((*var)[nvmelen + 1]);
+			return (&((*var)[nvmelen + 1]));
 		}
 	}
 	return (NULL);
