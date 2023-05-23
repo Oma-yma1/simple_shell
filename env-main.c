@@ -8,6 +8,7 @@
  * Credit Taha & Omayma
  */
 
+char **hd;
 int main(int argc __attribute__((unused)), char **argv)
 {
 	hd = argv;

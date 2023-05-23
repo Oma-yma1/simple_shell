@@ -1,5 +1,5 @@
 #ifndef SHELL_H
-#define SELL_H
+#define SHELL_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,7 +8,6 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-char** hd;
 extern char **environ;
 void irun_shell(void);
 void exct_commvnd(char **args);
@@ -23,4 +22,5 @@ void pnt_iiid(void);
 void prt_fle_stt(char *file_name);
 char *_getenv(const char *name);
 char *get_line(void);
+
 #endif

@@ -6,6 +6,7 @@
  * credit: Taha & Omayma
  */
 
+char **hd;
 void com_execve(char **args)
 {
 	char *d, *cmdpvth, *pth, *commvnd;
