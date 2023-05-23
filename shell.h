@@ -9,6 +9,7 @@
 #include <sys/types.h>
 
 extern char **environ;
+char **hd;
 void irun_shell(void);
 void exct_commvnd(char **args);
 void com_execve(char **args);
