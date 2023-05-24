@@ -16,7 +16,7 @@ char *linee = NULL;
 char **args;
 while (1)
 {
-if(isatty(0))
+if (isatty(0))
 thom_prompt();
 fflush(stdout);
 linee = get_line();
