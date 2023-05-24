@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * com_execve - com execve function
  * @args: arguments eleme
@@ -25,7 +24,7 @@ void com_execve(char **args)
 
 		while (d != NULL)
 		{
-			cmdpvth = malloc(strlen(d) + strlen(commvnd) + 2);
+			cmdpvth = malloc(_strlen(d) + _strlen(commvnd) + 2);
 			sprintf(cmdpvth, "%s/%s", d, commvnd);
 
 			if (access(cmdpvth, X_OK) == 0)

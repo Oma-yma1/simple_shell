@@ -23,5 +23,7 @@ void pnt_iiid(void);
 void prt_fle_stt(char *file_name);
 char *_getenv(const char *name);
 char *get_line(void);
-
+char *_strdup(char *str);
+int _strcmp(char *str1, char *str2);
+int _strlen(char *str);
 #endif
