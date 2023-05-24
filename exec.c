@@ -25,7 +25,7 @@ void com_execve(char **args)
 
 		while (d != NULL)
 		{
-			cmdpvth = malloc(strlen(d) + strlen(commvnd) + 2);
+			cmdpvth = malloc(_strlen(d) + _strlen(commvnd) + 2);
 			sprintf(cmdpvth, "%s/%s", d, commvnd);
 
 			if (access(cmdpvth, X_OK) == 0)
@@ -39,6 +39,6 @@ void com_execve(char **args)
 	}
 
 	error_msg = strcat(hd[0], ": No such file or directory\n");
-	len = strlen(error_msg);
+	len = _strlen(error_msg);
 	write(STDERR_FILENO, error_msg, len);
 }
