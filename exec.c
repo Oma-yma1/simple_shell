@@ -8,6 +8,8 @@
 void com_execve(char **args)
 {
 	char *d, *cmdpvth, *pth, *commvnd;
+	char *error_msg;
+	size_t len;
 	int i;
 
 	for (i = 0; args[i]; i++)
@@ -36,5 +38,7 @@ void com_execve(char **args)
 			d = strtok(NULL, ":");
 		}
 	}
-	printf("%s: No such file or directory\n", hd[0]);
+	error_msg = _strcat(hd[0], ": No such file or directory\n");
+	len = strlen(error_msg);
+	write(STDERR_FILENO, error_msg, len);
 }

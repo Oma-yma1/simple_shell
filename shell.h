@@ -26,4 +26,5 @@ char *get_line(void);
 char *_strdup(char *str);
 int _strcmp(char *str1, char *str2);
 int _strlen(char *str);
+char *_strcat(char *dest, char *src);
 #endif
