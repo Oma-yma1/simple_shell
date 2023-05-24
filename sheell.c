@@ -85,7 +85,7 @@ ssize_t len;
 int sf = STDOUT_FILENO;
 for (env = environ; *env != NULL; env++)
 {
-len = strlen(*env);
+len = _strlen(*env);
 if (write(sf, *env, len) != len || write(sf, "\n", 1) != 1)
 {
 perror("write");
