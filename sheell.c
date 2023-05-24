@@ -49,7 +49,7 @@ free(linee);
 void thomfree_args(char **args)
 {
 int i;
-for (i = 0; args && args[i]; i++)
+for (i = 0; args[i]; i++)
 {
 free(args[i]);
 }

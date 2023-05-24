@@ -31,7 +31,6 @@ void com_execve(char **args)
 			if (access(cmdpvth, X_OK) == 0)
 			{
 				execve(cmdpvth, args, environ);
-				free(cmdpvth);
 			}
 
 			free(cmdpvth);
