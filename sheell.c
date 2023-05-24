@@ -19,6 +19,7 @@ fflush(stdout);
 linee = get_line();
 if (!linee)
 {
+free(linee);
 exit(0);
 }
 args = thom_args(linee);
@@ -36,8 +37,8 @@ else
 exct_commvnd(args);
 }
 thomfree_args(args);
-}
 free(linee);
+}
 }
 /**
  * thomfree_args - thom free args
@@ -91,6 +92,7 @@ break;
 }
 }
 }
+thomfree_args(args);
 }
 /**
  * thom_builtin - thom bultin function
@@ -122,5 +124,11 @@ args[i++] = strdup(tkn);
 tkn = strtok(NULL, " \t\n");
 }
 args[i] = NULL;
+while (tkn != NULL)
+{
+free(tkn);
+tkn = strtok(NULL, " \t\n");
+}
+free(args);
 return (args);
 }
