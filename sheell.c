@@ -83,9 +83,16 @@ perror("cd");
 else if (strcmp(args[0], "env") == 0)
 {
 char **env;
+ssize_t len;
+int sf = STDOUT_FILENO;
 for (env = environ; *env != NULL; env++)
 {
-printf("%s\n", *env);
+len = strlen(*env);
+if (write(sf, *env, len) != len || write(sf, "\n", 1) != 1)
+{
+perror("write");
+break;
+}
 }
 }
 }

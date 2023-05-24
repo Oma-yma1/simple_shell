@@ -8,10 +8,14 @@
 void prt_fle_stt(char *file_name)
 {
 struct stat file_stat;
+char buffer[1024];
+int len;
 if (stat(file_name, &file_stat) == -1)
 {
 perror("stat");
 return;
 }
-printf("file: %s\n", file_name);
+len = sprintf(buffer, "File: %s\n", file_name);
+write(STDOUT_FILENO, buffer, len);
+
 }

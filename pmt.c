@@ -5,5 +5,5 @@
  */
 void thom_prompt(void)
 {
-printf("#thom$ ");
+write(STDOUT_FILENO, "#taha$ ", 7);
 }
