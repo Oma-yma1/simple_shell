@@ -11,14 +11,16 @@ void irun_shell(void)
 {
 char *linee = NULL;
 char **args;
+size_t len = 0;
+ssize_t read;
 while (1)
 {
 if (isatty(0))
 thom_prompt();
-fflush(stdout);
-linee = get_line();
-if (!linee)
+read = getline(&linee, &len, stdin);
+if (read == -1)
 {
+free(linee);
 exit(0);
 }
 args = thom_args(linee);
