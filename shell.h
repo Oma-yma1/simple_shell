@@ -23,5 +23,4 @@ void pnt_iiid(void);
 void prt_fle_stt(char *file_name);
 char *_getenv(const char *name);
 char *get_line(void);
-unsigned int _strlen(char *str);
 #endif
