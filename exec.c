@@ -36,11 +36,10 @@ void com_execve(char **args)
 			free(cmdpvth);
 			d = strtok(NULL, ":");
 		}
-
-		error_msg = malloc(strlen(commvnd) + 21);
-        	sprintf(error_msg, "sh: 1: %s: not found\n", commvnd);
-        	len = strlen(error_msg);
-        	write(STDERR_FILENO, error_msg, len);
-        	free(error_msg);
-    }
+error_msg = malloc(strlen(commvnd) + 21);
+sprintf(error_msg, "sh: 1 %s: not found\n", commvnd);
+len = strlen(error_msg);
+write(STDERR_FILENO, error_msg, len);
+free(error_msg);
+}
 }
