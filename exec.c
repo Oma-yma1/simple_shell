@@ -37,5 +37,5 @@ void com_execve(char **args)
 			d = strtok(NULL, ":");
 		}
 	}
-	printf("%s: No such file or directory\n", hd[0]);
+	perror(hd[0]);
 }
