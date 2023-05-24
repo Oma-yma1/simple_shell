@@ -11,14 +11,15 @@ void com_execve(char **args)
 	char *error_msg;
 	size_t len;
 	int i;
+
 	for (i = 0; args[i]; i++)
 	{
 		commvnd = args[i];
+
 		if (access(commvnd, X_OK) == 0)
 		{
 			execve(commvnd, args, environ);
 		}
-		
 		pth = _getenv("PATH");
 		d = strtok(pth, ":");
 
@@ -36,7 +37,7 @@ void com_execve(char **args)
 			d = strtok(NULL, ":");
 		}
 	}
-	
+
 	error_msg = strcat(hd[0], ": No such file or directory\n");
 	len = strlen(error_msg);
 	write(STDERR_FILENO, error_msg, len);
