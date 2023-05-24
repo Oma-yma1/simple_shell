@@ -69,7 +69,8 @@ return;
 }
 if (strcmp(args[0], "exit") == 0)
 {
-exit(0);
+if (atoi(args[1]) > 0)
+exit(atoi(args[1]));
 }
 else if (strcmp(args[0], "cd") == 0)
 {
