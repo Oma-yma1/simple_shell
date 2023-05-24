@@ -2,11 +2,7 @@
 
 #define BUFF_SSIZE 4096
 #define IMAX_ARGS 258
-void thomfree_args(char **args);
-int thom_builtin(char **args);
-void execute_builtinthom(char **args);
-char **thom_args(char *linee);
-void exct_commvnd(char **args);
+
 /**
  * irun_shell - run shell function
  * Credir Taha & Omayma
@@ -87,7 +83,7 @@ ssize_t len;
 int sf = STDOUT_FILENO;
 for (env = environ; *env != NULL; env++)
 {
-len = strlen(*env);
+len = _strlen(*env);
 if (write(sf, *env, len) != len || write(sf, "\n", 1) != 1)
 {
 perror("write");
