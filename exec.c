@@ -17,7 +17,7 @@ void com_execve(char **args)
 
 		if (access(commvnd, X_OK) == 0)
 		{
-			execve(commvnd, args, NULL);
+			execve(commvnd, args, environ);
 		}
 
 		pth = _getenv("PATH");
@@ -37,5 +37,5 @@ void com_execve(char **args)
 			d = strtok(NULL, ":");
 		}
 	}
-	printf("%s: No such file or directory\n", args[0]);
+	printf("%s: No such file or directory\n", hd[0]);
 }
