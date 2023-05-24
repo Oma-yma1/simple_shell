@@ -68,11 +68,11 @@ if (!args || !args[0])
 {
 return;
 }
-if (_strcmp(args[0], "exit") == 0)
+if (strcmp(args[0], "exit") == 0)
 {
 exit(0);
 }
-else if (_strcmp(args[0], "cd") == 0)
+else if (strcmp(args[0], "cd") == 0)
 {
 const char *di = args[1] ? args[1] : _getenv("HOME");
 if (chdir(di) != 0)
@@ -80,7 +80,7 @@ if (chdir(di) != 0)
 perror("cd");
 }
 }
-else if (_strcmp(args[0], "env") == 0)
+else if (strcmp(args[0], "env") == 0)
 {
 char **env;
 for (env = environ; *env != NULL; env++)
@@ -97,9 +97,9 @@ printf("%s\n", *env);
  */
 int thom_builtin(char **args)
 {
-return (_strcmp(args[0], "exit") == 0 ||
-_strcmp(args[0], "cd") == 0 ||
-_strcmp(args[0], "env") == 0);
+return (strcmp(args[0], "exit") == 0 ||
+strcmp(args[0], "cd") == 0 ||
+strcmp(args[0], "env") == 0);
 }
 /**
  * thom_args - thom args function
@@ -115,7 +115,7 @@ int i = 0;
 tkn = strtok(linee, " \t\n");
 while (tkn != NULL && i < IMAX_ARGS)
 {
-args[i++] = _strdup(tkn);
+args[i++] = strdup(tkn);
 tkn = strtok(NULL, " \t\n");
 }
 args[i] = NULL;
