@@ -29,7 +29,7 @@ void com_execve(char **args)
 
 			if (access(cmdpvth, X_OK) == 0)
 			{
-				execve(cmdpvth, args, NULL);
+				execve(cmdpvth, args, environ);
 			}
 
 			free(cmdpvth);
