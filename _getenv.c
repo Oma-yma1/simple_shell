@@ -7,9 +7,9 @@
  * created by TAHA & OMAYMA
  */
 
-char *_getenv(char *name)
+char *_getenv(const char *name)
 {
-	size_t nvmelen = _strlen(name);
+	size_t nvmelen = strlen(name);
 	char **var;
 
 	for (var = environ; *var != NULL; var++)
